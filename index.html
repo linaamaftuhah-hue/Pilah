@@ -3,30 +3,238 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Akses Produk Pilah</title>
+  <meta name="description" content="Katalog produk digital NR Digital Studio: prompt AI, worksheet anak, aset digital, dan akses interaktif Pilah.">
+  <title>NR Digital Studio - Katalog Produk Digital</title>
   <style>
-    :root{--bg:#0a0a0a;--card:#171717;--text:#f5f5f5;--muted:#a3a3a3;--line:#2a2a2a;--red:#e8352a;--red2:#ff4b3f}
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(900px 480px at 50% -10%,rgba(232,53,42,.16),transparent 62%),var(--bg);color:var(--text);min-height:100vh;padding:28px 16px} .wrap{max-width:760px;margin:0 auto} header{padding:26px 0 20px;text-align:center}.brand{color:var(--muted);font-size:14px;margin-bottom:8px}h1{font-size:34px;line-height:1.1;margin:0 0 10px}p{color:var(--muted);line-height:1.6;margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px}.card{background:linear-gradient(180deg,var(--card),#101010);border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:var(--text);min-height:120px;display:flex;flex-direction:column;justify-content:space-between}.card:hover{border-color:rgba(255,75,63,.7)}.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--red2);font-weight:800}.title{font-size:18px;font-weight:800;margin-top:8px}.hint{font-size:13px;color:var(--muted);margin-top:12px}.notice{margin-top:20px;padding:15px 16px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:12px;color:var(--muted);font-size:14px;line-height:1.6}.notice b{color:var(--text)}footer{text-align:center;color:var(--muted);font-size:12px;margin-top:28px}@media(max-width:640px){h1{font-size:28px}.grid{grid-template-columns:1fr}.card{min-height:104px}}
+    :root{
+      --orange:#D4622A;
+      --orange-dark:#A9471D;
+      --navy:#0D1B3E;
+      --ink:#172033;
+      --muted:#667085;
+      --cream:#F5F0E8;
+      --paper:#FFFDF8;
+      --white:#FFFFFF;
+      --line:#E5E0D7;
+      --green:#2D7D66;
+      --blue:#315D9F;
+      --rose:#B64F5B;
+      --shadow:0 18px 42px rgba(13,27,62,.13);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+    a{color:inherit}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,253,248,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(229,224,215,.85)}
+    .nav{max-width:1120px;margin:0 auto;min-height:66px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;color:var(--navy);white-space:nowrap}
+    .mark{width:34px;height:34px;border-radius:8px;background:var(--orange);display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:0 10px 22px rgba(212,98,42,.25)}
+    .navlinks{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .navlinks a{font-size:14px;text-decoration:none;color:#384156;padding:9px 11px;border-radius:8px}
+    .navlinks a:hover{background:var(--cream);color:var(--navy)}
+    .hero{min-height:calc(100vh - 66px);max-height:760px;position:relative;display:flex;align-items:end;isolation:isolate;overflow:hidden;background:var(--navy)}
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,27,62,.92),rgba(13,27,62,.64) 48%,rgba(13,27,62,.22)),linear-gradient(0deg,rgba(13,27,62,.9),rgba(13,27,62,.02) 36%),url("assets/mockup-bundle-scalev.png");background-size:cover;background-position:center right;z-index:-2}
+    .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:92px;background:linear-gradient(0deg,var(--paper),rgba(255,253,248,0));z-index:-1}
+    .hero-inner{width:100%;max-width:1120px;margin:0 auto;padding:76px 20px 118px;color:#fff}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.11);padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;color:#fff}
+    h1{max-width:760px;margin:20px 0 16px;font-size:clamp(40px,7vw,78px);line-height:.98;letter-spacing:0;color:#fff}
+    .hero p{max-width:650px;margin:0;color:rgba(255,255,255,.86);font-size:18px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:900;border:1px solid transparent;transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--orange);color:#fff;box-shadow:0 12px 28px rgba(212,98,42,.28)}
+    .btn-primary:hover{background:var(--orange-dark)}
+    .btn-light{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.34);color:#fff}
+    .btn-dark{background:var(--navy);color:#fff}
+    .btn-outline{background:#fff;color:var(--navy);border-color:var(--line)}
+    main{position:relative;margin-top:-58px}
+    section{padding:72px 20px}
+    .container{max-width:1120px;margin:0 auto}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:24px}
+    .section-head h2{margin:0;color:var(--navy);font-size:clamp(27px,3.5vw,44px);line-height:1.05;letter-spacing:0}
+    .section-head p{margin:8px 0 0;max-width:640px;color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:24px}
+    .stat{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px;box-shadow:0 8px 24px rgba(13,27,62,.06)}
+    .stat strong{display:block;color:var(--navy);font-size:26px;line-height:1}.stat span{display:block;color:var(--muted);font-size:13px;margin-top:6px}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;min-height:100%;box-shadow:0 10px 26px rgba(13,27,62,.07)}
+    .thumb{height:174px;position:relative;overflow:hidden;background:var(--cream);display:grid;place-items:center}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .visual{width:100%;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:18px;color:#fff;background:linear-gradient(135deg,var(--navy),#1d3d6d)}
+    .visual.green{background:linear-gradient(135deg,#214A3F,var(--green))}.visual.blue{background:linear-gradient(135deg,#223A66,var(--blue))}.visual.rose{background:linear-gradient(135deg,#672E3C,var(--rose))}.visual.orange{background:linear-gradient(135deg,#7F3217,var(--orange))}
+    .visual small{font-weight:900;text-transform:uppercase;letter-spacing:.06em;opacity:.84}.visual b{font-size:27px;line-height:1.05;max-width:260px}
+    .badge{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.94);color:var(--navy);border-radius:999px;padding:6px 10px;font-size:12px;font-weight:900;box-shadow:0 8px 16px rgba(13,27,62,.12)}
+    .body{padding:18px;display:flex;flex-direction:column;gap:12px;flex:1}
+    .meta{display:flex;flex-wrap:wrap;gap:8px}.pill{display:inline-flex;padding:5px 8px;border-radius:999px;background:var(--cream);color:#4b5565;font-size:12px;font-weight:800}
+    .body h3{margin:0;color:var(--navy);font-size:20px;line-height:1.18;letter-spacing:0}.body p{margin:0;color:var(--muted);font-size:14px}.body ul{margin:0;padding-left:18px;color:#4d5668;font-size:14px}.body li{margin:4px 0}
+    .actions{margin-top:auto;display:grid;gap:8px}.actions.two{grid-template-columns:1fr 1fr}.actions .btn{min-height:42px;padding:10px 12px;font-size:14px}
+    .access-band{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .access-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}
+    .access-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;box-shadow:var(--shadow)}
+    .access-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}.access-links a{background:var(--paper);border:1px solid var(--line);border-radius:8px;text-decoration:none;padding:12px;font-weight:900;color:var(--navy)}.access-links a:hover{border-color:var(--orange);color:var(--orange-dark)}
+    .note{margin-top:14px;color:var(--muted);font-size:13px}.footer{padding:34px 20px;background:var(--navy);color:rgba(255,255,255,.78)}.footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.footer b{color:#fff}
+    @media(max-width:900px){main{margin-top:-38px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.access-layout{grid-template-columns:1fr}.hero{min-height:680px}.hero-inner{padding-bottom:88px}}
+    @media(max-width:640px){.nav{min-height:auto;padding:12px 16px;align-items:flex-start}.navlinks{gap:2px}.navlinks a{font-size:13px;padding:7px 8px}.hero{min-height:640px;align-items:center}.hero::before{background:linear-gradient(90deg,rgba(13,27,62,.94),rgba(13,27,62,.76)),url("assets/mockup-bundle-scalev.png");background-size:cover;background-position:center}.hero-inner{padding:58px 16px 92px}.hero p{font-size:16px}.section-head{display:block}.grid,.stats,.access-links{grid-template-columns:1fr}.actions.two{grid-template-columns:1fr}section{padding:52px 16px}.thumb{height:156px}.footer .container{display:block}}
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <header>
-      <div class="brand">Pilah. by Nurwanda R</div>
-      <h1>Akses Produk Pilah</h1>
-      <p>Pilih produk yang Anda beli, lalu masukkan Access Key yang diberikan setelah pembayaran.</p>
-    </header>
-    <section class="grid" aria-label="Daftar produk">
-      <a class="card" href="/vol1"><div><div class="kicker">Bundle</div><div class="title">AI Prompt Mastery Vol.1</div></div><div class="hint">56+ prompt siap pakai</div></a>
-      <a class="card" href="/vol2"><div><div class="kicker">Bundle</div><div class="title">AI Prompt Mastery Vol.2</div></div><div class="hint">Teknik, debug, chaining</div></a>
-      <a class="card" href="/bonus-9-skill"><div><div class="kicker">Bonus</div><div class="title">9 Skill AI Bonus</div></div><div class="hint">Panduan skill eksklusif</div></a>
-      <a class="card" href="/pilah-01"><div><div class="kicker">Pilah 01</div><div class="title">Bisnis & Monetisasi</div></div><div class="hint">Prompt bisnis digital</div></a>
-      <a class="card" href="/pilah-02"><div><div class="kicker">Pilah 02</div><div class="title">Konten & Copywriting</div></div><div class="hint">Prompt konten dan copy</div></a>
-      <a class="card" href="/pilah-03"><div><div class="kicker">Pilah 03</div><div class="title">Media Sosial</div></div><div class="hint">Prompt growth sosial media</div></a>
+  <header class="topbar">
+    <nav class="nav" aria-label="Navigasi utama">
+      <a class="brand" href="#top"><span class="mark">NR</span><span>NR Digital Studio</span></a>
+      <div class="navlinks">
+        <a href="#produk">Produk</a>
+        <a href="#pilah">Akses Pilah</a>
+        <a href="https://nr-brilink.myscalev.com/">Scalev</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <span class="eyebrow">Katalog Produk Digital Indonesia</span>
+      <h1>Prompt AI, worksheet anak, dan aset digital siap pakai.</h1>
+      <p>Satu halaman utama untuk memilih produk NR Digital Studio. Pembeli bisa checkout lewat Scalev, lalu produk Pilah interaktif bisa dibuka langsung dari HP melalui link Vercel.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#produk">Lihat Semua Produk</a>
+        <a class="btn btn-light" href="https://nr-brilink.myscalev.com/">Buka Toko Scalev</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="produk">
+      <div class="container">
+        <div class="stats" aria-label="Ringkasan katalog">
+          <div class="stat"><strong>8</strong><span>produk digital</span></div>
+          <div class="stat"><strong>4</strong><span>produk Pilah AI</span></div>
+          <div class="stat"><strong>4</strong><span>produk edukasi & aset</span></div>
+          <div class="stat"><strong>HP</strong><span>akses praktis</span></div>
+        </div>
+        <div class="section-head">
+          <div>
+            <h2>Etalase Produk</h2>
+            <p>Pilih sesuai kebutuhan: mulai dari prompt AI untuk jualan dan konten, worksheet anak, sampai aset digital untuk bisnis online.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="thumb"><img src="assets/mockup-bundle-scalev.png" alt="Mockup AI Prompt Mastery Bundle"><span class="badge">Bundle Pilah</span></div>
+            <div class="body">
+              <div class="meta"><span class="pill">Prompt AI</span><span class="pill">Bundle</span></div>
+              <h3>AI Prompt Mastery Bundle</h3>
+              <p>Paket utama untuk pembeli yang ingin langsung punya kumpulan prompt siap pakai untuk konten, bisnis, dan eksekusi digital.</p>
+              <ul><li>Cocok untuk pemula</li><li>Akses interaktif via Vercel</li><li>Lebih hemat dibanding beli satuan</li></ul>
+              <div class="actions two"><a class="btn btn-primary" href="https://nr-brilink.myscalev.com/p/ai-prompt-mastery-bundle">Beli di Scalev</a><a class="btn btn-outline" href="/bundle">Akses Pilah</a></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><div class="visual orange"><small>Pilah 01</small><b>Bisnis Digital Indonesia</b></div><span class="badge">Rp49rb</span></div>
+            <div class="body">
+              <div class="meta"><span class="pill">Bisnis</span><span class="pill">Monetisasi</span></div>
+              <h3>Prompt AI Siap Pakai untuk Bisnis Digital Indonesia</h3>
+              <p>Prompt untuk ide produk, validasi, penawaran, riset, dan langkah jualan yang lebih rapi.</p>
+              <div class="actions two"><a class="btn btn-primary" href="https://nr-brilink.myscalev.com/p/26-prompt-ai-siap-pakai-untuk-bisnis-digital-indonesia">Beli</a><a class="btn btn-outline" href="/pilah-01">Akses</a></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><div class="visual blue"><small>Pilah 02</small><b>Konten & Copy yang Menjual</b></div><span class="badge">Rp49rb</span></div>
+            <div class="body">
+              <div class="meta"><span class="pill">Konten</span><span class="pill">Copywriting</span></div>
+              <h3>Prompt AI untuk Konten & Copy yang Benar-Benar Menjual</h3>
+              <p>Template prompt untuk caption, hook, storytelling, soft selling, dan copy produk.</p>
+              <div class="actions two"><a class="btn btn-primary" href="https://nr-brilink.myscalev.com/p/24-prompt-ai-untuk-konten-copy-yang-benar-benar-menjual">Beli</a><a class="btn btn-outline" href="/pilah-02">Akses</a></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><div class="visual green"><small>Pilah 03</small><b>Akun IG & TikTok Tumbuh</b></div><span class="badge">Rp49rb</span></div>
+            <div class="body">
+              <div class="meta"><span class="pill">Instagram</span><span class="pill">TikTok</span></div>
+              <h3>23 Prompt AI untuk Akun Instagram & TikTok yang Tumbuh</h3>
+              <p>Prompt untuk ide konten, kalender posting, angle video pendek, dan optimasi akun.</p>
+              <div class="actions two"><a class="btn btn-primary" href="https://nr-brilink.myscalev.com/p/23-prompt-ai-untuk-akun-instagram-tiktok-yang-tumbuh">Beli</a><a class="btn btn-outline" href="/pilah-03">Akses</a></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><div class="visual rose"><small>Worksheet</small><b>Lisensi RL / PRL</b></div></div>
+            <div class="body">
+              <div class="meta"><span class="pill">Anak</span><span class="pill">Lisensi</span></div>
+              <h3>Worksheet Anak Lisensi RL/PRL</h3>
+              <p>Paket worksheet digital untuk anak, cocok dijual ulang sesuai ketentuan lisensi produk.</p>
+              <div class="actions"><a class="btn btn-primary" href="https://nr-brilink.myscalev.com/p/worksheet-anak-lisensi-rl-prl">Beli di Scalev</a></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><div class="visual green"><small>Premium</small><b>Worksheet Anak Muslim</b></div></div>
+            <div class="body">
+              <div class="meta"><span class="pill">Edukasi</span><span class="pill">Islami</span></div>
+              <h3>Worksheet Anak Muslim Premium</h3>
+              <p>Bahan aktivitas anak bertema muslim untuk belajar, bermain, dan kegiatan edukatif di rumah.</p>
+              <div class="actions"><a class="btn btn-primary" href="https://nr-brilink.myscalev.com/p/workshett-anak-muslim-premium">Beli di Scalev</a></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="assets/thumbnail-lynk-id.png" alt="Preview aset digital dan link aktif"><span class="badge">Aset Digital</span></div>
+            <div class="body">
+              <div class="meta"><span class="pill">Ebook</span><span class="pill">Video</span><span class="pill">Affiliate</span></div>
+              <h3>Aset Digital Ebook dan Video Affiliate Link Aktif</h3>
+              <p>Koleksi aset digital untuk mendukung promosi, edukasi, dan peluang affiliate link aktif.</p>
+              <div class="actions"><a class="btn btn-primary" href="https://nr-brilink.myscalev.com/p/aset-digital-ebook-dan-video-affiliet-link-aktif">Beli di Scalev</a></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><div class="visual orange"><small>Digital Library</small><b>Koleksi Edukasi Islami Anak</b></div></div>
+            <div class="body">
+              <div class="meta"><span class="pill">Library</span><span class="pill">Anak</span><span class="pill">Islami</span></div>
+              <h3>Koleksi Edukasi Islami Anak Digital Library</h3>
+              <p>Kumpulan materi digital bertema edukasi islami anak dalam satu library praktis.</p>
+              <div class="actions"><a class="btn btn-primary" href="https://nr-brilink.myscalev.com/p/koleksi-edukasi-islami-anak-digital-library">Beli di Scalev</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
-    <div class="notice"><b>Catatan:</b> satu Access Key bisa membuka produk dalam paket yang sama. Kalau akses tidak terbuka, gunakan Chrome/Safari dan salin key tanpa spasi.</div>
-    <footer>NR Digital Studio - Akses khusus pembeli</footer>
+
+    <section class="access-band" id="pilah">
+      <div class="container access-layout">
+        <div>
+          <div class="section-head">
+            <div>
+              <h2>Akses Interaktif Pilah</h2>
+              <p>Link ini untuk pembeli produk Pilah yang sudah punya Access Key. Key tidak ditampilkan di halaman publik, supaya produk tetap aman.</p>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="/akses">Buka Halaman Akses</a>
+            <a class="btn btn-outline" href="https://pilah-bywan.vercel.app/">Link Vercel Pilah</a>
+          </div>
+        </div>
+        <div class="access-panel">
+          <strong>Link cepat produk Pilah</strong>
+          <div class="access-links">
+            <a href="/bundle">Bundle</a>
+            <a href="/pilah-01">Pilah 01</a>
+            <a href="/pilah-02">Pilah 02</a>
+            <a href="/pilah-03">Pilah 03</a>
+          </div>
+          <p class="note">Cantumkan link akses ini di file/delivery Scalev. Access Key sebaiknya tetap diberikan hanya kepada pembeli.</p>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div><b>NR Digital Studio</b><br>Produk digital praktis untuk belajar, konten, dan jualan.</div>
+      <div><a href="https://nr-brilink.myscalev.com/">nr-brilink.myscalev.com</a></div>
+    </div>
+  </footer>
 </body>
 </html>
